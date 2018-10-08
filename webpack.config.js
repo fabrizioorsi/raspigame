@@ -7,6 +7,7 @@ var phaserModule = path.join(__dirname, '/node_modules/phaser-ce/')
 var phaser = path.join(phaserModule, 'build/custom/phaser-split.js')
 var pixi = path.join(phaserModule, 'build/custom/pixi.js')
 var p2 = path.join(phaserModule, 'build/custom/p2.js')
+var box2d = path.join(phaserModule, 'build/custom/box2d-plugin-full.min.js')
 
 var definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true'))
@@ -14,15 +15,16 @@ var definePlugin = new webpack.DefinePlugin({
 
 module.exports = {
   entry: {
-    app: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')],
-    vendor: ['pixi', 'p2', 'phaser']
+    mainclient: ['babel-polyfill', path.resolve(__dirname, 'src/main.js')],
+    joystick: ['babel-polyfill', path.resolve(__dirname, 'src/mainJoy.js')],
+    vendor: ['pixi', 'p2', 'phaser', 'box2d']
   },
   devtool: 'cheap-source-map',
   output: {
     pathinfo: true,
     path: path.resolve(__dirname, 'www', 'dist'),
     publicPath: './dist/',
-    filename: 'bundle.js'
+    filename: '[name]-bundle.js'
   },
   watch: true,
   plugins: [
@@ -60,7 +62,8 @@ module.exports = {
     alias: {
       phaser: phaser,
       pixi: pixi,
-      p2: p2
+      p2: p2,
+      box2d, box2d
     }
   }
 }

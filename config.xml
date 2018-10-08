@@ -7,7 +7,7 @@
     <author email="admin@alexander-wong.com" href="https://alexander-wong.com">
         Alexander Wong
     </author>
-    <content src="index.html" />
+    <content src="indexJoy.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -24,9 +24,14 @@
     </platform>
     <preference name="Fullscreen" value="true" />
     <preference name="orientation" value="landscape" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-browsersync" spec="git+https://git@github.com/awwong1/cordova-plugin-browsersync.git" />
+    <feature name="CDVWKWebViewEngine">
+        <param name="ios-package" value="CDVWKWebViewEngine" />
+    </feature>
+    <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^2.0.2" />
     <engine name="android" spec="^6.3.0" />
-    <engine name="browser" spec="^5.0.0" />
-    <engine name="ios" spec="^4.5.1" />
-    <plugin name="cordova-plugin-browsersync" spec="git+ssh://git@github.com/awwong1/cordova-plugin-browsersync.git" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
+    <engine name="browser" spec="^5.0.4" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>

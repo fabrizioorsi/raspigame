@@ -16,7 +16,6 @@ var app = {
   // 'pause', 'resume', etc.
   onDeviceReady: function () {
     this.receivedEvent('deviceready')
-
     // When the device is ready, start Phaser Boot state.
     window.game.state.start('Boot')
   },

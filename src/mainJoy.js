@@ -2,9 +2,9 @@ import 'pixi'
 import 'p2'
 import Phaser from 'phaser'
 
-import BootState from './states/Boot'
-import GameState from './states/Game'
-import PreloadState from './states/Preload'
+import BootState from './states/BootJoy'
+import GameState from './states/GameJoy'
+import PreloadState from './states/PreloadJoy'
 import * as PadPlugin from './assets/phaser-virtual-joystick.min.js'
 
 import config from './config'
